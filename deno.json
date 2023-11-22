@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-read --allow-net main.ts"
+  },
+  "imports": {
+    "@nestjs/common": "npm:@nestjs/common@10.2.10",
+    "@nestjs/core": "npm:@nestjs/core@10.2.10",
+    "@nestjs/platform-express": "npm:@nestjs/platform-express@10.2.10",
+    "path": "node:path"
+  }
+}
