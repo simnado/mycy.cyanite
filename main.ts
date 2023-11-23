@@ -1,13 +1,16 @@
-import { Controller, Get, Module } from 'npm:@nestjs/common@10.2.10';
-import { NestFactory } from 'npm:@nestjs/core@10.2.10';
-import { NestExpressApplication } from 'npm:@nestjs/platform-express@10.2.10';
+import { Controller, Get, Module } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'node:path';
+import { CyaniteApiClient } from '@narendev/cyanite-sdk';
+import { config } from 'dotenv';
 
 @Controller('cats')
 export class CatsController {
   @Get()
   findAll(): string {
-    return 'This action returns all cats';
+    const api = new CyaniteApiClient();
+    return api.getLibrary();
   }
 }
 
@@ -19,9 +22,11 @@ export class CatsController {
 export class AppModule {}
 
 async function bootstrap() {
+  await config({export: true});
+
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  await app.listen(3000);
+  await app.listen(3009);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
 

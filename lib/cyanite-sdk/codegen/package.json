@@ -1,0 +1,17 @@
+{
+  "name": "cyanite-codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "zeus https://api.cyanite.ai/graphql src --typescript "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "graphql-zeus": "^5.3.2"
+  }
+}

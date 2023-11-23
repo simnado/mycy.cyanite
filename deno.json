@@ -1,11 +1,13 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-read --allow-net main.ts"
+    "dev": "deno run --watch --allow-read --allow-net --allow-env main.ts"
   },
   "imports": {
+    "@narendev/cyanite-sdk": "./lib/cyanite-sdk/index.ts",
     "@nestjs/common": "npm:@nestjs/common@10.2.10",
     "@nestjs/core": "npm:@nestjs/core@10.2.10",
     "@nestjs/platform-express": "npm:@nestjs/platform-express@10.2.10",
+    "dotenv": "https://deno.land/x/dotenv/mod.ts",
     "path": "node:path"
   }
 }
